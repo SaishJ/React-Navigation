@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "starter_expo_app",
+    "name": "react-navigation",
     "slug": "starter_expo_app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -14,9 +14,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
