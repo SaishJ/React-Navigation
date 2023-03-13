@@ -1,16 +1,23 @@
-import { StyleSheet, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { Button, StyleSheet, Text, View } from "react-native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const Link = () => {
+  const navigation = useNavigation();
+  return <Button title="Click" onPress={() => navigation.navigate("Detail")} />;
+};
 
 const Home = () => (
   <View>
     <Text>Home</Text>
+    <Link />
   </View>
 );
 
-const Detail = () => (
+const Detail = ({ navigation }) => (
   <View>
     <Text>Detail</Text>
+    <Button title="Go Back" onPress={() => navigation.goBack()} />
   </View>
 );
 

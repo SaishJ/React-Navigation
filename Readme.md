@@ -21,3 +21,7 @@ npm install @react-navigation/native
 - createNativeStackNavigator
 
   > `createNativeStackNavigator` is a function that returns an object containing 2 properties: `Screen` and `Navigator`. Both of them are React components used for configuring the navigator. The `Navigator` should contain `Screen` elements as its children to define the configuration for routes.
+
+- Navigating Between Screens
+
+  > `navigation` - The `navigation` prop is passed in to every _screen component_ in the native stack navigator.
