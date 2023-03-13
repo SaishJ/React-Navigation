@@ -1,6 +1,7 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Home = ({ navigation }) => (
   <View style={styles.container}>
@@ -23,6 +24,12 @@ const Detail = ({ navigation, route }) => {
     </View>
   );
 };
+
+const Account = () => (
+  <View>
+    <Text>Account</Text>
+  </View>
+);
 
 const Stack = createNativeStackNavigator();
 
@@ -55,10 +62,21 @@ const Navigator = () => {
   );
 };
 
+const Tab = createBottomTabNavigator();
+
+const TabNavigator = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Account" component={Account} />
+    </Tab.Navigator>
+  );
+};
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Navigator />
+      <TabNavigator />
     </NavigationContainer>
   );
 }
