@@ -32,3 +32,7 @@ npm install @react-navigation/native
 
   1. Pass params to a route by putting them in an object as a second parameter to the `navigation.navigate` function.
   2. Read the params in your screen component using `route.params`.
+
+- Setting Screen Title
+
+  > A `Stack.Screen` component accepts options prop which is either an object or a function that returns an object, that contains various configuration options. i.e. `title` for the header title

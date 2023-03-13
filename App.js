@@ -30,7 +30,12 @@ const Navigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Detail" component={Detail} />
+      <Stack.Screen
+        name="Detail"
+        component={Detail}
+        // options={{ title: "Detail Component" }} // Set directly with title key
+        options={({ route }) => ({ title: route.params.name })} // Set dynamically
+      />
     </Stack.Navigator>
   );
 };
