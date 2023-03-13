@@ -2,6 +2,7 @@ import { Button, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Home = ({ navigation }) => (
   <View style={styles.container}>
@@ -50,6 +51,7 @@ const Navigator = () => {
           // Apply only single screen
           headerStyle: { backgroundColor: "#f8f9fa" },
           headerTintColor: "dodgerblue",
+          headerShown: false,
         }}
       />
       <Stack.Screen
@@ -66,9 +68,32 @@ const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Account" component={Account} />
+    <Tab.Navigator
+      screenOptions={{
+        tabBarActiveBackgroundColor: "#f8f9fa",
+        tabBarActiveTintColor: "black",
+        tabBarInactiveBackgroundColor: "dodgerblue",
+        tabBarInactiveTintColor: "#fff",
+      }}
+    >
+      <Tab.Screen
+        name="Feed"
+        component={Navigator}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Account"
+        component={Account}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <MaterialCommunityIcons name="account" size={size} color={color} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };

@@ -44,3 +44,7 @@ npm install @react-navigation/native
   1. headerStyle: A style object that will be applied to the `View` that wraps the header. If you set backgroundColor on it, that will be the color of your header.
   2. headerTintColor: The back button and title both use this property as their color.
   3. headerTitleStyle: To customize the `fontFamily`, `fontWeight` and other `Text` style properties for the title
+
+- Nesting Navigators
+
+  > Nesting navigators means rendering a navigator inside a screen of another navigator. The `Home` component contains a tab navigator. The `Home` component is also used for the `Home` screen in stack navigator inside the `App` component. So here, a stack navigator is nested inside a tab navigator.
