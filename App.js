@@ -1,25 +1,28 @@
 import { Button, StyleSheet, Text, View } from "react-native";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const Link = () => {
-  const navigation = useNavigation();
-  return <Button title="Click" onPress={() => navigation.navigate("Detail")} />;
-};
-
-const Home = () => (
-  <View>
+const Home = ({ navigation }) => (
+  <View style={styles.container}>
     <Text>Home</Text>
-    <Link />
+    <Button
+      title="Detail"
+      onPress={() => navigation.navigate("Detail", { id: 1, name: "Item 1" })}
+    />
   </View>
 );
 
-const Detail = ({ navigation }) => (
-  <View>
-    <Text>Detail</Text>
-    <Button title="Go Back" onPress={() => navigation.goBack()} />
-  </View>
-);
+const Detail = ({ navigation, route }) => {
+  const { id, name } = route.params;
+  return (
+    <View style={styles.container}>
+      <Text>
+        {id}, {name}
+      </Text>
+      <Button title="Go Back" onPress={() => navigation.goBack()} />
+    </View>
+  );
+};
 
 const Stack = createNativeStackNavigator();
 

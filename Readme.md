@@ -25,3 +25,10 @@ npm install @react-navigation/native
 - Navigating Between Screens
 
   > `navigation` - The `navigation` prop is passed in to every _screen component_ in the native stack navigator.
+
+- Passing Parameter to Routes
+
+  > Pass data to routes when we navigate to them.
+
+  1. Pass params to a route by putting them in an object as a second parameter to the `navigation.navigate` function.
+  2. Read the params in your screen component using `route.params`.
