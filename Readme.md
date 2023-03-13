@@ -36,3 +36,11 @@ npm install @react-navigation/native
 - Setting Screen Title
 
   > A `Stack.Screen` component accepts options prop which is either an object or a function that returns an object, that contains various configuration options. i.e. `title` for the header title
+
+- Customizing Headers
+
+  > There are three key properties to use when customizing the style of your header: `headerStyle`, `headerTintColor`, and `headerTitleStyle`.
+
+  1. headerStyle: A style object that will be applied to the `View` that wraps the header. If you set backgroundColor on it, that will be the color of your header.
+  2. headerTintColor: The back button and title both use this property as their color.
+  3. headerTitleStyle: To customize the `fontFamily`, `fontWeight` and other `Text` style properties for the title

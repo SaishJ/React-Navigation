@@ -28,8 +28,23 @@ const Stack = createNativeStackNavigator();
 
 const Navigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
+    <Stack.Navigator
+      screenOptions={{
+        // Apply on all screen
+        headerStyle: { backgroundColor: "tomato" },
+        headerTintColor: "#fff",
+        headerTitleAlign: "center",
+      }}
+    >
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          // Apply only single screen
+          headerStyle: { backgroundColor: "#f8f9fa" },
+          headerTintColor: "dodgerblue",
+        }}
+      />
       <Stack.Screen
         name="Detail"
         component={Detail}
